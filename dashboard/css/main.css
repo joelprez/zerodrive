@@ -1,0 +1,83 @@
+/* .contenedor-archivos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    width: 80%;
+    margin: 0 auto;
+} */
+
+.menu {
+    border-bottom: 4px solid lightgrey;
+}
+
+.archivo {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 10px;
+    text-align: center;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.archivo i {
+    line-height: normal;
+    color: #3f51b5;
+    font-size: 65px;
+}
+
+.archivo span {
+    font-family: sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.archivo:hover, .active {
+    background-color: lightgrey;
+}
+
+/* menu click derecho */
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    border: 0.05em solid black;
+}
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 200px;
+    text-align: left;
+    list-style: none;
+}
+
+.context-menu a {
+    margin-left: 10px;
+}
+
+.context-menu i {
+    margin-right: 5px;
+}
+
+.context-menu ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border: 0.05em solid lightgrey;
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.context-menu ul li:hover {
+    background: lightgrey;
+}
