@@ -3,7 +3,7 @@ session_start();
 
 require '../inc/conn.php';
 
-$select = $conn->prepare("SELECT * FROM files WHERE owner_id = ?");
+$select = $conn->prepare("SELECT * FROM files WHERE owner_id = ? ORDER BY timestamp DESC");
 $select->bindParam(1, $_SESSION["id"], PDO::PARAM_STR);
 $select->execute();
 $select = $select->fetchAll();
