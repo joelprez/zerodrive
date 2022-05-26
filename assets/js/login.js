@@ -26,6 +26,7 @@ loginBtn.onclick = function() {
                 // message.classList.remove("bg-blue-400");
                 // send data to API
                 values = {
+                    type: "login",
                     email: email.value,
                     password: passwordHash.value,
                     csrf: csrf.value
@@ -35,7 +36,7 @@ loginBtn.onclick = function() {
                     values.totp_code = $("#totp_code").val();
                 }
 
-                $.post("api/login.php", values, function(result) {
+                $.post("api/auth.php", values, function(result) {
                     let output = JSON.parse(result);
                     if (output.success) {
                         loginBtn.disabled = true;

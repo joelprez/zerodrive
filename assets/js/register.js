@@ -40,7 +40,7 @@ email.addEventListener('input', function() {
     }
 });
 
-password.addEventListener('input', function() {
+password.addEventListener("input", function() {
     if (password.value !== "") {
         password.classList.remove("mb-1");
         meter.style.display = "block";
@@ -52,7 +52,7 @@ password.addEventListener('input', function() {
     meter.value = zxcvbn(password.value).score;
 })
 
-password2.addEventListener('input', function() {
+password2.addEventListener("input", function() {
     if (password2.value !== "") {
         password2.classList.add("input-check-meter");
     } else {
@@ -79,7 +79,8 @@ registerBtn.onclick = function() {
             // hash password
             let hashed_password = hash_password(password.value);
             // send data to API
-            $.post("api/register.php", {
+            $.post("api/auth.php", {
+                type: "register",
                 email: email.value,
                 password: hashed_password,
                 g_recaptcha_response: document.getElementById("g-recaptcha-response").value,
