@@ -1,12 +1,10 @@
 <?php
 session_start();
-
 // redirect if user is already logged in
 if (isset($_SESSION["id"]) && is_numeric($_SESSION["id"])) {
     header("Location: index.php");
     die();
 }
-
 require_once 'inc/config.php';
 // CSRF generation
 $_SESSION["csrf"] = md5(uniqid(mt_rand(), true));
@@ -30,6 +28,7 @@ $_SESSION["csrf"] = md5(uniqid(mt_rand(), true));
 <body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
     <h1 class="text-6xl font-extrabold mb-4"><span class="text-blue-600">Zero</span><span class="text-white">Drive</span></h1>
     <div class="mr-0.5 w-96 rounded overflow-hidden shadow-lg bg-white p-6 text-center">
+        <div class="rounded mb-1.5 p-2 text-white bg-sky-400"><a href="login.php">Login now</a></div>
         <div id="message" class="rounded mb-1.5 p-2 text-white hidden"></div>
         <input name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-sm text-gray-700 focus:outline-none focus:shadow-outline my-1" placeholder="example@email.com" autocomplete="off">
         <input name="password" type="password" class="shadow appearance-none border rounded text-sm w-full py-2 px-3 focus:outline-none focus:shadow-outline mt-1 mb-1" placeholder="●●●●●●●●●●">
