@@ -44,3 +44,8 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 .input-check-meter-success {
     border-bottom-color: green !important;
 }
+
+.g-recaptcha {
+    transform:scale(1.1);
+    transform-origin:0 0;
+}
